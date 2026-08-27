@@ -1,0 +1,70 @@
+{
+  "brand": "DEPARTIFY",
+  "url": "https://departify.app",
+  "tagline": "Te devolvemos tiempo",
+  "made_in": "Spain",
+  "logos": {
+    "primary": {
+      "file": "logo.svg",
+      "format": "image/svg+xml",
+      "size_bytes": 1262,
+      "description": "Símbolo D oficial con gradiente de marca (lime→verde bosque, split diagonal).",
+      "recommended_use": "Default para web, presentaciones, documentos digitales. Mantiene gradiente y material de marca."
+    },
+    "lime": {
+      "file": "logo-lime.svg",
+      "format": "image/svg+xml",
+      "description": "Versión monocroma accent lime (#D8FF62) sobre fondos oscuros o neutros."
+    },
+    "forest": {
+      "file": "logo-forest.svg",
+      "format": "image/svg+xml",
+      "description": "Versión monocroma forest green (#0E3D1A) sobre fondos claros."
+    },
+    "white": {
+      "file": "logo-white.svg",
+      "format": "image/svg+xml",
+      "description": "Versión monocroma blanca (#FAFAFA) sobre fondos de color."
+    },
+    "black": {
+      "file": "logo-black.svg",
+      "format": "image/svg+xml",
+      "description": "Versión monocroma negro ink (#0A0C08) para impresión a una sola tinta, grabado o bordado."
+    }
+  },
+  "png_fallbacks": {
+    "symbol_3d": "manual-assets/departify-d-symbol.png",
+    "flat": "manual-assets/departify-d-flat.png",
+    "with_wordmark": "manual-assets/departify-logo-with-wordmark.png",
+    "wordmark_on_light": "manual-assets/departify-wordmark-on-light.png",
+    "brand_showcase": "manual-assets/departify-brand-meta.gif"
+  },
+  "colors": {
+    "accent_lime": "#D8FF62",
+    "accent_lime_hover": "#E3FF7A",
+    "accent_lime_pressed": "#CBFF4E",
+    "background_ink": "#0A0C08",
+    "forest_dark": "#0E3D1A",
+    "fg_100": "#FAFAFA",
+    "fg_50_muted": "#8A8A8A"
+  },
+  "typography": {
+    "primary": "Inter",
+    "monospace": "JetBrains Mono",
+    "fallback_web": "system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif"
+  },
+  "tagline_short": "Te devolvemos tiempo",
+  "voice": "Castilian Spanish (peninsular). Never Latin American.",
+  "usage_rules": [
+    "Do not deform, stretch, or rotate the logo.",
+    "Do not change the gradient or add drop shadows.",
+    "Do not place on busy backgrounds without adequate contrast.",
+    "Minimum size 24px digital / 8mm print.",
+    "The lime accent should occupy less than 15% of any composition."
+  ],
+  "canonical": {
+    "homepage": "https://departify.app",
+    "app": "https://app.departify.app",
+    "manual": "https://departify-brand-manual.vercel.app"
+  }
+}

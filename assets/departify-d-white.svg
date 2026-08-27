@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10164 10618" preserveAspectRatio="xMidYMid meet">
+  <title>DEPARTIFY · Logo D (White)</title>
+  <desc>Versión monocroma blanco (#FAFAFA) del símbolo D de DEPARTIFY.</desc>
+  <defs>
+    <linearGradient id="departify-gradient" x1="0" y1="0" x2="10164" y2="10618" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#D8FF62"/>
+      <stop offset="0.35" stop-color="#B8E852"/>
+      <stop offset="0.50" stop-color="#1F7A2E"/>
+      <stop offset="0.65" stop-color="#0E3D1A"/>
+      <stop offset="1" stop-color="#0A2C12"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(-7427 -6815)">
+    <path d="M13350 17430 C13944 17387 14531 17227 15067 16960 C15780 16605 16393 16062 16892 15343 C17149 14974 17351 14575 17508 14130 C17934 12925 17969 11281 17591 10218 C17377 9614 17101 9134 16658 8590 C16567 8479 16214 8122 16105 8033 C15251 7327 14423 6970 13300 6823 C13107 6798 8369 6790 8238 6815 C7812 6895 7494 7224 7435 7645 C7427 7703 7425 8929 7427 12085 L7430 16445 L7458 16545 C7591 17022 8031 17381 8545 17433 C8635 17442 13221 17439 13350 17430 Z" fill="#FAFAFA" fill-rule="evenodd"/>
+  </g>
+</svg>

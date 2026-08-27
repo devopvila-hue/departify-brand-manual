@@ -4,9 +4,38 @@ Manual de marca oficial de **DEPARTIFY** (departify.app), v1.0 · 2026.
 
 ## Contenido
 
-- `index.html` — manual completo (12 secciones, 34 páginas A4)
-- `manual-assets/` — logos oficiales (D symbol, lockups)
+- `index.html` — manual completo (12 secciones, 34 páginas A4, con CSS responsive)
 - `manual-departify.pdf` — PDF para descargar
+- `manual-assets/` — logos oficiales en PNG
+- `assets/` — logos vectoriales en SVG (variantes de color)
+- `brand/` — **assets de marca descargables para humanos y agentes** (logos SVG + manifiesto JSON + página de brand)
+
+## Brand assets · URL pública
+
+Una vez desplegado en Vercel, los assets están disponibles en:
+
+| Recurso | URL |
+| --- | --- |
+| Página de marca (HTML) | `https://departify-brand-manual.vercel.app/brand/` |
+| Logo principal (SVG, gradiente) | `https://departify-brand-manual.vercel.app/brand/logo.svg` |
+| Logo monocromo lime | `https://departify-brand-manual.vercel.app/brand/logo-lime.svg` |
+| Logo monocromo forest | `https://departify-brand-manual.vercel.app/brand/logo-forest.svg` |
+| Logo monocromo blanco | `https://departify-brand-manual.vercel.app/brand/logo-white.svg` |
+| Logo monocromo negro | `https://departify-brand-manual.vercel.app/brand/logo-black.svg` |
+| Manifiesto JSON (para LLMs) | `https://departify-brand-manual.vercel.app/brand/manifest.json` |
+
+## Cómo incluir el logo en tu output (para agentes y scripts)
+
+```json
+{
+  "brand": "DEPARTIFY",
+  "logo_url": "https://departify-brand-manual.vercel.app/brand/logo.svg",
+  "logo_white_url": "https://departify-brand-manual.vercel.app/brand/logo-white.svg",
+  "tagline": "Te devolvemos tiempo",
+  "color_accent": "#D8FF62",
+  "color_ink": "#0A0C08"
+}
+```
 
 ## Estructura
 
@@ -14,23 +43,47 @@ Manual de marca oficial de **DEPARTIFY** (departify.app), v1.0 · 2026.
 .
 ├── index.html              # Manual web (con CSS responsive)
 ├── manual-departify.pdf    # PDF imprimible (34 páginas A4)
-└── manual-assets/
-    ├── departify-d-symbol.png          # Símbolo D, fondo transparente
-    ├── departify-d-flat.png            # Símbolo D plano
-    ├── departify-logo-with-wordmark.png  # Símbolo + wordmark sobre transparente
-    ├── departify-wordmark-on-light.png   # Wordmark sobre fondo claro
-    └── departify-brand-meta.gif          # Brand showcase
+├── manual-assets/          # Logos PNG originales
+│   ├── departify-d-symbol.png
+│   ├── departify-d-flat.png
+│   ├── departify-logo-with-wordmark.png
+│   ├── departify-wordmark-on-light.png
+│   └── departify-brand-meta.gif
+├── assets/                 # Logos SVG vectoriales
+│   ├── departify-d-gradient.svg
+│   ├── departify-d-lime.svg
+│   ├── departify-d-forest.svg
+│   ├── departify-d-white.svg
+│   └── departify-d-black.svg
+└── brand/                  # Assets públicos para descarga
+    ├── index.html          # Página "brand assets" navegable
+    ├── logo.svg            # Logo principal (con gradiente de marca)
+    ├── logo-lime.svg
+    ├── logo-forest.svg
+    ├── logo-white.svg
+    ├── logo-black.svg
+    └── manifest.json       # Metadatos estructurados para LLMs
 ```
+
+## Brand
+
+- **Logo:** marca D con split diagonal lime→verde
+- **Colores:** Accent Lime `#D8FF62` · Background Ink `#0A0C08` · Forest `#0E3D1A`
+- **Tipografía:** Inter (sans/display) + JetBrains Mono
+- **Tagline:** "Te devolvemos tiempo"
 
 ## Visualización local
 
 ```bash
-# Opción 1: abrir directamente
+# Abrir el manual en el navegador
 open index.html
 
-# Opción 2: servidor local
+# Servidor local
 python3 -m http.server 8000
 # luego abre http://localhost:8000
+
+# Ver los brand assets
+open brand/index.html
 ```
 
 ## Regenerar el PDF
@@ -53,13 +106,6 @@ with sync_playwright() as p:
     b.close()
 "
 ```
-
-## Brand
-
-- **Logo:** marca D con split diagonal lime→verde
-- **Colores:** Accent Lime `#D8FF62` · Background Ink `#0A0C08` · Forest `#0E3D1A`
-- **Tipografía:** Inter (sans/display) + JetBrains Mono
-- **Tagline:** "Te devolvemos tiempo"
 
 ## Made in Spain
 

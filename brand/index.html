@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>DEPARTIFY · Brand Assets</title>
+<meta name="description" content="Logos oficiales, colores y tipografía de DEPARTIFY. Recursos para que cualquier agente o persona use la marca correctamente.">
+<style>
+  :root {
+    --accent: #D8FF62;
+    --bg: #0A0C08;
+    --surface: #14171F;
+    --fg: #FAFAFA;
+    --muted: #8A8A8A;
+    --border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; padding:0; background: var(--bg); color: var(--fg);
+         font-family: 'Inter', system-ui, -apple-system, sans-serif;
+         line-height: 1.55; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 60px 24px; }
+  h1 { font-size: 36pt; font-weight: 800; letter-spacing: -0.025em; margin: 0 0 12px; }
+  h1 span { color: var(--accent); }
+  .lede { color: var(--muted); font-size: 14pt; max-width: 640px; margin: 0 0 40px; }
+  h2 { font-size: 18pt; font-weight: 700; margin: 40px 0 16px;
+       padding-top: 24px; border-top: 1px solid var(--border); }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .card { background: var(--surface); border: 1px solid var(--border);
+          border-radius: 8px; padding: 24px; }
+  .card .label { font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+                 color: var(--muted); text-transform: uppercase; letter-spacing: 0.16em;
+                 margin-bottom: 12px; }
+  .card .preview { display: flex; align-items: center; justify-content: center;
+                   height: 140px; background: var(--bg); border-radius: 4px;
+                   margin-bottom: 16px; }
+  .card .preview img { max-width: 80%; max-height: 80%; }
+  .card h3 { margin: 0 0 6px; font-size: 13pt; font-weight: 600; }
+  .card p { font-size: 11pt; color: var(--muted); margin: 0 0 12px; }
+  .card code { font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+               background: var(--bg); padding: 4px 8px; border-radius: 4px;
+               display: inline-block; word-break: break-all; }
+  .card .actions a { display: inline-block; padding: 6px 12px;
+                     background: var(--accent); color: var(--bg);
+                     text-decoration: none; font-weight: 600; font-size: 10pt;
+                     border-radius: 4px; margin-right: 6px; }
+  .card .actions a.secondary { background: transparent; color: var(--fg);
+                                border: 1px solid var(--border); }
+  .palette { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+  .swatch { aspect-ratio: 1.4/1; border-radius: 6px; padding: 12px;
+            display: flex; flex-direction: column; justify-content: flex-end;
+            font-family: 'JetBrains Mono', monospace; }
+  .swatch .name { font-size: 10pt; font-weight: 600; }
+  .swatch .hex { font-size: 9pt; opacity: 0.85; }
+  .json-block { background: var(--bg); border: 1px solid var(--border); border-radius: 6px;
+                padding: 16px; font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+                overflow-x: auto; }
+  .json-block a { color: var(--accent); text-decoration: none; }
+  .meta { display: flex; flex-wrap: wrap; gap: 24px; margin: 12px 0 32px;
+          font-family: 'JetBrains Mono', monospace; font-size: 10pt;
+          color: var(--muted); text-transform: uppercase; letter-spacing: 0.14em; }
+  .meta strong { color: var(--fg); font-weight: 500; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>DEPARTIFY · <span>brand assets</span></h1>
+  <p class="lede">Logos oficiales, paleta y tipografía. Pensado para que cualquier agente o persona pueda usar la marca sin inventarse nada.</p>
+
+  <div class="meta">
+    <span><strong>URL canónica</strong> departify.app</span>
+    <span><strong>Tagline</strong> Te devolvemos tiempo</span>
+    <span><strong>Versión</strong> 1.0 · 2026</span>
+  </div>
+
+  <h2>Logos · vector SVG</h2>
+  <div class="grid">
+    <div class="card">
+      <div class="label">Primary</div>
+      <div class="preview" style="background:#0A0C08;"><img src="logo.svg" alt="DEPARTIFY D gradient"></div>
+      <h3>Logo principal</h3>
+      <p>Símbolo D con gradiente de marca (lime→verde bosque, split diagonal).</p>
+      <p><code>brand/logo.svg</code></p>
+      <p class="actions"><a href="logo.svg">Descargar SVG</a> <a href="logo.svg" target="_blank" class="secondary">Ver</a></p>
+    </div>
+    <div class="card">
+      <div class="label">Lime</div>
+      <div class="preview" style="background:#0A0C08;"><img src="logo-lime.svg" alt="DEPARTIFY D lime"></div>
+      <h3>Accent Lime</h3>
+      <p>Versión monocroma lime (#D8FF62) sobre fondos oscuros.</p>
+      <p><code>brand/logo-lime.svg</code></p>
+      <p class="actions"><a href="logo-lime.svg">Descargar SVG</a> <a href="logo-lime.svg" target="_blank" class="secondary">Ver</a></p>
+    </div>
+    <div class="card">
+      <div class="label">Forest</div>
+      <div class="preview" style="background:#FAFAFA;"><img src="logo-forest.svg" alt="DEPARTIFY D forest"></div>
+      <h3>Forest Green</h3>
+      <p>Versión monocroma verde bosque (#0E3D1A) sobre fondos claros.</p>
+      <p><code>brand/logo-forest.svg</code></p>
+      <p class="actions"><a href="logo-forest.svg">Descargar SVG</a> <a href="logo-forest.svg" target="_blank" class="secondary">Ver</a></p>
+    </div>
+    <div class="card">
+      <div class="label">White</div>
+      <div class="preview" style="background:#0A0C08;"><img src="logo-white.svg" alt="DEPARTIFY D white"></div>
+      <h3>Blanco</h3>
+      <p>Versión monocroma blanca (#FAFAFA) sobre fondos de color.</p>
+      <p><code>brand/logo-white.svg</code></p>
+      <p class="actions"><a href="logo-white.svg">Descargar SVG</a> <a href="logo-white.svg" target="_blank" class="secondary">Ver</a></p>
+    </div>
+    <div class="card">
+      <div class="label">Black</div>
+      <div class="preview" style="background:#FAFAFA;"><img src="logo-black.svg" alt="DEPARTIFY D black"></div>
+      <h3>Negro ink</h3>
+      <p>Para impresión a una sola tinta, grabado o bordado.</p>
+      <p><code>brand/logo-black.svg</code></p>
+      <p class="actions"><a href="logo-black.svg">Descargar SVG</a> <a href="logo-black.svg" target="_blank" class="secondary">Ver</a></p>
+    </div>
+    <div class="card">
+      <div class="label">Para agentes</div>
+      <div class="preview" style="background:#14171F; font-family: 'JetBrains Mono', monospace; font-size: 9pt; color: var(--accent); padding: 16px; line-height: 1.4; text-align: left;">{ "logo": "logo.svg" }</div>
+      <h3>Manifiesto JSON</h3>
+      <p>Metadatos estructurados para LLMs y scripts que necesiten usar la marca.</p>
+      <p><code>brand/manifest.json</code></p>
+      <p class="actions"><a href="manifest.json">Descargar JSON</a> <a href="manifest.json" target="_blank" class="secondary">Ver</a></p>
+    </div>
+  </div>
+
+  <h2>Paleta</h2>
+  <div class="palette">
+    <div class="swatch" style="background:#D8FF62;color:#0A0C08;"><div class="name">Accent Lime</div><div class="hex">#D8FF62</div></div>
+    <div class="swatch" style="background:#E3FF7A;color:#0A0C08;"><div class="name">Lime Hover</div><div class="hex">#E3FF7A</div></div>
+    <div class="swatch" style="background:#CBFF4E;color:#0A0C08;"><div class="name">Lime Pressed</div><div class="hex">#CBFF4E</div></div>
+    <div class="swatch" style="background:#0A0C08;color:#FAFAFA;"><div class="name">Background Ink</div><div class="hex">#0A0C08</div></div>
+    <div class="swatch" style="background:#0E3D1A;color:#FAFAFA;"><div class="name">Forest Dark</div><div class="hex">#0E3D1A</div></div>
+    <div class="swatch" style="background:#FAFAFA;color:#0A0C08;"><div class="name">FG 100</div><div class="hex">#FAFAFA</div></div>
+    <div class="swatch" style="background:#8A8A8A;color:#FAFAFA;"><div class="name">FG 50 Muted</div><div class="hex">#8A8A8A</div></div>
+  </div>
+
+  <h2>Tipografía</h2>
+  <p><strong>Sans/Display:</strong> Inter (400–800). Fallback web: <code>system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif</code></p>
+  <p><strong>Monospace:</strong> JetBrains Mono (400–500). Fallback: <code>ui-monospace, SF Mono, Menlo, monospace</code></p>
+
+  <h2>Reglas rápidas</h2>
+  <ul>
+    <li>No deformar, no rotar, no añadir sombras.</li>
+    <li>Tamaño mínimo: 24 px digital · 8 mm impresión.</li>
+    <li>El acento lime no debe superar el 15% de la composición.</li>
+    <li>La marca habla en castellano de España. Nunca usar TTS o copy con acento latinoamericano.</li>
+  </ul>
+
+  <h2>Cómo incluir el logo en tu output</h2>
+  <p>Si eres un agente o LLM y necesitas incluir el logo en una respuesta, usa:</p>
+  <div class="json-block">
+{
+  "brand": "DEPARTIFY",
+  "logo_url": "https://departify-brand-manual.vercel.app/brand/logo.svg",
+  "logo_white_url": "https://departify-brand-manual.vercel.app/brand/logo-white.svg",
+  "tagline": "Te devolvemos tiempo",
+  "color_accent": "#D8FF62",
+  "color_ink": "#0A0C08"
+}
+  </div>
+</div>
+</body>
+</html>
