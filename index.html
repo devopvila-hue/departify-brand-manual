@@ -1,0 +1,1370 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Manual de Marca — DEPARTIFY</title>
+<style>
+  /* ============================================================
+     DEPARTIFY · Manual de Marca v1.0 (2026)
+     Color tokens, typography, page geometry.
+     ============================================================ */
+
+  :root {
+    --accent: #D8FF62;
+    --accent-hover: #E3FF7A;
+    --accent-pressed: #CBFF4E;
+    --accent-soft: rgba(216, 255, 98, 0.10);
+    --accent-line: rgba(216, 255, 98, 0.40);
+
+    --forest: #0E3D1A;
+    --forest-dark: #0A2C12;
+    --bg: #0A0C08;
+    --surface: #0F110F;
+    --surface-soft: #14171F;
+    --surface-2: #1A1F1A;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.14);
+
+    --fg: #FAFAFA;
+    --fg-2: #E5E5E5;
+    --muted: #8A8A8A;
+    --muted-2: #6B6B6B;
+
+    --danger: #E5484D;
+    --warn: #F5A524;
+    --success: #30A46C;
+
+    --font-sans: "Inter", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-display: "Inter", "Geist", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+    --font-mono: "JetBrains Mono", "Geist Mono", "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+
+  @page {
+    size: A4;
+    margin: 22mm 18mm 22mm 18mm;
+  }
+
+  @page :first {
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--font-sans);
+    color: var(--fg);
+    background: #0a0a0a;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    line-height: 1.55;
+    font-size: 10.5pt;
+  }
+
+  /* ---------- WEB VIEW ADJUSTMENTS ---------- */
+  @media screen {
+    body { background: #1a1a1a; padding: 0; }
+    .cover {
+      height: auto !important;
+      min-height: 90vh;
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 60px 40px !important;
+    }
+    .cover-mark {
+      position: relative !important;
+      top: 0 !important; right: 0 !important;
+      width: 200px !important; height: 200px !important;
+      margin: 30px 0;
+    }
+    .cover-headline { font-size: 56pt !important; margin-top: 30px !important; }
+    .cover-sub { font-size: 14pt !important; }
+    .page {
+      max-width: 880px;
+      margin: 0 auto;
+      background: #fff;
+    }
+    .body { padding: 40px 50px 30px 50px !important; }
+    .section-header { padding: 50px 50px 40px 50px !important; }
+    .docfoot { padding: 20px 50px 30px 50px !important; background: #fff; }
+  }
+
+  /* Floating nav (web only) */
+  .web-nav {
+    display: none;
+    position: fixed; top: 16px; right: 16px;
+    z-index: 100;
+    background: rgba(10,12,8,0.92);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-family: var(--font-mono);
+    font-size: 10pt;
+    color: var(--fg);
+    backdrop-filter: blur(12px);
+  }
+  .web-nav a {
+    color: var(--accent);
+    text-decoration: none;
+    margin: 0 4px;
+  }
+  .web-nav a:hover { color: var(--accent-hover); }
+  @media screen { .web-nav { display: block; } }
+
+  .page {
+    page-break-after: always;
+    background: #fff;
+    color: #1a1a1a;
+    padding: 0;
+  }
+  .page:last-child { page-break-after: auto; }
+
+  .dark { background: var(--bg); color: var(--fg); }
+  .surface { background: var(--surface); color: var(--fg); }
+
+  /* Cover */
+  .cover {
+    height: 297mm;
+    width: 210mm;
+    background: var(--bg);
+    color: var(--fg);
+    position: relative;
+    padding: 30mm 24mm 24mm 24mm;
+    display: flex;
+    flex-direction: column;
+    page-break-after: always;
+    background-image:
+      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(216,255,98,0.10), transparent 60%),
+      radial-gradient(ellipse 40% 30% at 100% 100%, rgba(14,61,26,0.35), transparent 70%);
+  }
+  .cover-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .cover-spacer { flex: 1; }
+  .cover-headline {
+    margin-top: 18mm;
+    font-family: var(--font-display);
+    font-size: 64pt;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    line-height: 0.95;
+    color: var(--fg);
+  }
+  .cover-headline .accent { color: var(--accent); }
+  .cover-sub {
+    margin-top: 8mm;
+    font-family: var(--font-sans);
+    font-size: 13pt;
+    color: var(--fg-2);
+    max-width: 130mm;
+    line-height: 1.5;
+  }
+  .cover-foot {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .cover-foot .lime { color: var(--accent); }
+  .cover-mark {
+    position: absolute;
+    top: 60mm; right: 24mm;
+    width: 64mm; height: 64mm;
+    transform: rotate(-3deg);
+    filter: drop-shadow(0 30px 80px rgba(216,255,98,0.18));
+  }
+  .cover-mark img { width: 100%; height: 100%; object-fit: contain; }
+
+  /* Section header */
+  .section-header {
+    background: var(--bg);
+    color: var(--fg);
+    padding: 18mm 18mm 14mm 18mm;
+    page-break-after: avoid;
+  }
+  .section-header .eyebrow {
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-bottom: 6mm;
+  }
+  .section-header .eyebrow .num { color: var(--accent); }
+  .section-header h1 {
+    font-family: var(--font-display);
+    font-size: 36pt;
+    font-weight: 800;
+    letter-spacing: -0.025em;
+    line-height: 1.02;
+    margin: 0 0 4mm 0;
+  }
+  .section-header h1 .accent { color: var(--accent); }
+  .section-header .lead {
+    color: var(--fg-2);
+    font-size: 11pt;
+    max-width: 150mm;
+    line-height: 1.55;
+  }
+
+  /* Body */
+  .body {
+    background: #fff;
+    color: #1a1a1a;
+    padding: 14mm 0 8mm 0;
+  }
+  .body h2 {
+    font-family: var(--font-display);
+    font-size: 18pt;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    color: #0A0C08;
+    margin: 0 0 3mm 0;
+  }
+  .body h3 {
+    font-family: var(--font-sans);
+    font-size: 11pt;
+    font-weight: 700;
+    color: #0A0C08;
+    margin: 7mm 0 2mm 0;
+  }
+  .body p {
+    margin: 0 0 3mm 0;
+    color: #2A2A2A;
+    font-size: 10.5pt;
+  }
+  .body ul, .body ol {
+    margin: 0 0 4mm 0;
+    padding-left: 6mm;
+    color: #2A2A2A;
+  }
+  .body li { margin-bottom: 1.5mm; font-size: 10.5pt; }
+
+  .grid { display: grid; gap: 5mm; }
+  .grid-2 { grid-template-columns: 1fr 1fr; }
+  .grid-3 { grid-template-columns: 1fr 1fr 1fr; }
+  .grid-4 { grid-template-columns: 1fr 1fr 1fr 1fr; }
+
+  .card {
+    background: #F6F6F4;
+    border: 1px solid #E5E5E0;
+    border-radius: 3mm;
+    padding: 5mm 5mm;
+  }
+  .card.dark {
+    background: var(--bg);
+    border-color: var(--border);
+    color: var(--fg);
+  }
+  .card .label {
+    font-family: var(--font-mono);
+    font-size: 7.5pt;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 2mm;
+  }
+  .card.dark .label { color: var(--muted); }
+  .card .value { font-size: 11pt; font-weight: 600; color: #0A0C08; }
+  .card.dark .value { color: var(--fg); }
+
+  /* TOC */
+  .toc { padding: 10mm 0; }
+  .toc ol { list-style: none; padding: 0; margin: 0; counter-reset: section; }
+  .toc li {
+    counter-increment: section;
+    display: flex;
+    align-items: baseline;
+    gap: 4mm;
+    padding: 2.4mm 0;
+    border-bottom: 1px solid #EAEAE6;
+    font-size: 11pt;
+  }
+  .toc li::before {
+    content: counter(section, decimal-leading-zero);
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    color: var(--muted);
+    width: 12mm;
+    flex-shrink: 0;
+  }
+  .toc li .title { flex: 1; color: #0A0C08; font-weight: 500; }
+  .toc li .page {
+    font-family: var(--font-mono);
+    font-size: 8.5pt;
+    color: var(--muted);
+  }
+
+  /* Color swatch */
+  .swatch {
+    aspect-ratio: 1.4 / 1;
+    border-radius: 3mm;
+    padding: 4mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .swatch.light { color: #0A0C08; }
+  .swatch .name { font-size: 10pt; font-weight: 700; letter-spacing: -0.01em; }
+  .swatch .hex { font-family: var(--font-mono); font-size: 8pt; opacity: 0.85; margin-top: 0.5mm; }
+  .swatch .role {
+    position: absolute; top: 4mm; left: 4mm;
+    font-family: var(--font-mono); font-size: 7pt; opacity: 0.7; text-transform: uppercase; letter-spacing: 0.18em;
+  }
+
+  /* Table */
+  table.codes {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin: 2mm 0 5mm 0;
+  }
+  table.codes th {
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 7.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    font-weight: 500;
+    padding: 1.5mm 2mm;
+    border-bottom: 1px solid #D5D5CF;
+  }
+  table.codes td {
+    padding: 2.5mm 2mm;
+    border-bottom: 1px solid #EAEAE6;
+    color: #1a1a1a;
+    vertical-align: top;
+  }
+  table.codes td .chip {
+    display: inline-block;
+    width: 6mm; height: 6mm; border-radius: 1.2mm; vertical-align: middle;
+    margin-right: 2mm; border: 1px solid rgba(0,0,0,0.08);
+  }
+  table.codes td .mono { font-family: var(--font-mono); font-size: 9pt; color: #0A0C08; }
+
+  /* Typography specimen */
+  .specimen {
+    border-top: 1px solid #EAEAE6;
+    padding: 5mm 0 4mm 0;
+    display: grid;
+    grid-template-columns: 35mm 1fr;
+    gap: 8mm;
+    align-items: baseline;
+  }
+  .specimen .meta {
+    font-family: var(--font-mono);
+    font-size: 8pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+  }
+  .specimen .meta strong { color: #0A0C08; display: block; font-weight: 600; margin-bottom: 1mm; }
+  .specimen .display {
+    font-family: var(--font-display);
+    color: #0A0C08;
+    line-height: 1.02;
+  }
+  .specimen .display.h1 { font-size: 32pt; font-weight: 800; letter-spacing: -0.025em; }
+  .specimen .display.h2 { font-size: 22pt; font-weight: 700; letter-spacing: -0.015em; }
+  .specimen .display.h3 { font-size: 16pt; font-weight: 600; }
+  .specimen .display.body { font-size: 11pt; font-weight: 400; line-height: 1.55; }
+  .specimen .display.mono { font-family: var(--font-mono); font-size: 10pt; }
+
+  /* Logo do/dont */
+  .logogrid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5mm;
+  }
+  .logogrid .cell {
+    aspect-ratio: 1.4 / 1;
+    border-radius: 3mm;
+    display: flex; align-items: center; justify-content: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .logogrid .cell .badge {
+    position: absolute; top: 3mm; left: 3mm;
+    font-family: var(--font-mono); font-size: 7pt; text-transform: uppercase; letter-spacing: 0.18em;
+    padding: 1mm 2.5mm; border-radius: 999px;
+  }
+  .ok { background: var(--success); color: #fff; }
+  .no { background: var(--danger); color: #fff; }
+  .cell.dark { background: var(--bg); }
+  .cell.gray { background: #6B6B6B; }
+  .cell.lime { background: var(--accent); }
+  .cell.light { background: #F0F0EC; border: 1px solid #DDD; }
+  .cell.distort {
+    background: var(--bg);
+    transform: scaleX(0.6) rotate(-4deg);
+  }
+  .cell.rotate45 { background: var(--bg); transform: rotate(45deg) scale(0.9); }
+  .cell.shadow { background: var(--bg); }
+  .cell.shadow::after {
+    content: ""; position: absolute; left: 22%; top: 35%; width: 56%; height: 30%;
+    background: var(--accent); filter: blur(8px); opacity: 0.7; transform: rotate(8deg);
+  }
+
+  /* real logo (PNG asset) */
+  .logo-d {
+    width: 24mm; height: 24mm;
+    object-fit: contain;
+    display: block;
+  }
+  .logo-d.xs { width: 14mm; height: 14mm; }
+  .logo-d.s  { width: 18mm; height: 18mm; }
+  .logo-d.m  { width: 24mm; height: 24mm; }
+  .logo-d.l  { width: 36mm; height: 36mm; }
+  .logo-d.xl { width: 60mm; height: 60mm; }
+
+  /* logo + wordmark (full lockup) */
+  .logo-lockup {
+    display: inline-flex; align-items: center; gap: 4mm;
+  }
+  .logo-lockup img.d { width: 24mm; height: 24mm; object-fit: contain; }
+  .logo-lockup .wm {
+    font-family: var(--font-sans);
+    font-size: 18pt; font-weight: 700; color: #0A0C08;
+    letter-spacing: -0.02em;
+  }
+  .logo-lockup.on-dark .wm { color: #FAFAFA; }
+
+  /* Email signature preview */
+  .sigcard {
+    border: 1px solid #E5E5E0;
+    border-radius: 3mm;
+    padding: 5mm 6mm;
+    background: #fff;
+    font-size: 9.5pt;
+    color: #0A0C08;
+  }
+  .sigcard hr { border: 0; border-top: 1px solid #D5D5CF; margin: 3mm 0; }
+  .sigcard .name { font-size: 12pt; font-weight: 700; color: #0A0C08; }
+  .sigcard .role { color: #5A5A5A; font-size: 9pt; }
+  .sigcard .links a { color: var(--forest); text-decoration: none; }
+  .sigcard .accent-line { height: 1.5pt; width: 30mm; background: var(--accent); margin-top: 3mm; }
+  .sigcard pre {
+    font-family: var(--font-mono); font-size: 8pt; background: #F6F6F4;
+    border: 1px solid #EAEAE6; border-radius: 2mm; padding: 3mm; white-space: pre-wrap;
+    color: #1a1a1a;
+  }
+
+  /* Social media spec card */
+  .smspec {
+    background: #F6F6F4; border: 1px solid #E5E5E0; border-radius: 3mm; padding: 4mm;
+  }
+  .smspec .platform { font-weight: 700; font-size: 10pt; color: #0A0C08; margin-bottom: 2mm; display: flex; align-items: center; gap: 2mm; }
+  .smspec .row { display: flex; justify-content: space-between; padding: 1mm 0; font-size: 9pt; color: #1a1a1a; }
+  .smspec .row .k { font-family: var(--font-mono); color: var(--muted); font-size: 8pt; }
+  .smspec .row .v { font-weight: 600; color: #0A0C08; }
+
+  /* Do / Don't */
+  .doDont { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+  .doDont .cell { border-radius: 3mm; padding: 5mm; }
+  .doDont .yes { background: #F0F9F4; border: 1px solid #BFE5CF; }
+  .doDont .not { background: #FBEEEF; border: 1px solid #ECC7CA; }
+  .doDont .badge {
+    display: inline-block; font-family: var(--font-mono); font-size: 7pt; text-transform: uppercase; letter-spacing: 0.18em;
+    padding: 1mm 2.5mm; border-radius: 999px; margin-bottom: 3mm;
+  }
+  .doDont .yes .badge { background: var(--success); color: #fff; }
+  .doDont .not .badge { background: var(--danger); color: #fff; }
+  .doDont p { font-size: 9.5pt; margin: 0; color: #1a1a1a; }
+
+  /* Pill / tag */
+  .pill {
+    display: inline-block; padding: 1.5mm 4mm; border-radius: 999px;
+    font-family: var(--font-mono); font-size: 7.5pt; text-transform: uppercase; letter-spacing: 0.16em;
+  }
+  .pill.dark { background: var(--bg); color: var(--fg); }
+  .pill.accent { background: var(--accent); color: #0A0C08; }
+  .pill.line { border: 1px solid var(--border-strong); color: #0A0C08; }
+
+  /* Section divider */
+  .divider {
+    height: 0.6mm; width: 100%; background: var(--accent);
+  }
+
+  /* Footer */
+  .docfoot {
+    margin-top: 8mm;
+    padding-top: 4mm;
+    border-top: 0.3mm solid #EAEAE6;
+    display: flex; justify-content: space-between;
+    font-family: var(--font-mono); font-size: 7.5pt; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 0.18em;
+  }
+</style>
+</head>
+<body>
+
+<nav class="web-nav">
+  <a href="#top">↑ arriba</a> · <a href="manual-departify.pdf" target="_blank">PDF</a>
+</nav>
+
+<a id="top"></a>
+
+<!-- ============== COVER ============== -->
+<section class="cover">
+  <div class="cover-top">
+    <span>Manual de marca</span>
+    <span>v1.0 · 2026</span>
+  </div>
+  <div class="cover-spacer"></div>
+  <div class="cover-mark"><img src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D symbol"></div>
+  <h1 class="cover-headline">Departamentos<br>que <span class="accent">trabajan</span><br>para tu empresa.</h1>
+  <p class="cover-sub">Manual de marca de DEPARTIFY. Una guía de referencia para que cualquier persona —interna o externa— produzca materiales coherentes con la marca, tanto si es una campaña de pago, una firma de email, un post en redes o una presentación a un cliente.</p>
+  <div class="cover-foot">
+    <span>Departify · Business Operating System</span>
+    <span class="lime">departify.app</span>
+  </div>
+</section>
+
+<!-- ============== ÍNDICE ============== -->
+<section class="page">
+  <div class="body" style="padding-top: 18mm;">
+    <p class="pill dark" style="margin-bottom: 6mm;">Índice</p>
+    <h2 style="font-size: 28pt; margin-bottom: 8mm;">Manual de Marca · DEPARTIFY</h2>
+    <div class="toc">
+      <ol>
+        <li><span class="title">Identidad de marca</span><span class="page">04</span></li>
+        <li><span class="title">Logotipo</span><span class="page">06</span></li>
+        <li><span class="title">Color</span><span class="page">10</span></li>
+        <li><span class="title">Tipografía</span><span class="page">14</span></li>
+        <li><span class="title">Tono de voz y copywriting</span><span class="page">16</span></li>
+        <li><span class="title">Estilo visual</span><span class="page">18</span></li>
+        <li><span class="title">Redes sociales</span><span class="page">20</span></li>
+        <li><span class="title">Firma de email</span><span class="page">24</span></li>
+        <li><span class="title">Web y digital</span><span class="page">27</span></li>
+        <li><span class="title">Materiales impresos</span><span class="page">29</span></li>
+        <li><span class="title">Do's &amp; Don'ts</span><span class="page">31</span></li>
+        <li><span class="title">Recursos y contacto</span><span class="page">34</span></li>
+      </ol>
+    </div>
+
+    <h3 style="margin-top: 10mm;">Cómo usar este manual</h3>
+    <p>Este documento es la fuente de verdad para todo lo visual y verbal de DEPARTIFY. Si vas a producir un material — un anuncio, una slide, una firma, un post — empieza por la sección que aplique a tu caso y respeta los códigos que aquí se definen.</p>
+    <p>Las <strong>reglas de marca</strong> son pocas y no negociables: el logo, la paleta, la tipografía, el tono. El resto — composición, fotografía, plantilla de post — son recomendaciones que se pueden adaptar a cada soporte sin romper la identidad.</p>
+    <p>Si dudas, la regla es: <em>si no está en este manual, no se hace sin consultarlo con el equipo de marca</em>.</p>
+
+    <div class="docfoot">
+      <span>Departify · Manual de Marca</span>
+      <span>01 · Índice</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============== 1. IDENTIDAD ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">01 · </span>Identidad de marca</div>
+    <h1>Quiénes somos, <span class="accent">para quién</span> y por qué.</h1>
+    <p class="lead">DEPARTIFY es un sistema operativo para empresas que ejecuta departamentos especializados (marketing, SEO y los que están por venir) en paralelo, 24/7, sin desplegar nada. Tú defines los objetivos, el departamento trabaja, tú apruebas lo importante.</p>
+  </div>
+  <div class="body">
+    <div class="grid grid-2">
+      <div>
+        <h2>Misión</h2>
+        <p>Devolver tiempo a las personas que dirigen una empresa, automatizando el trabajo de los departamentos que hoy depende exclusivamente de ellas.</p>
+        <h2>Visión</h2>
+        <p>Que cualquier pyme en España y Europa pueda operar con la eficiencia de una gran empresa, sin contratar un equipo entero.</p>
+        <h2>Valores</h2>
+        <ul>
+          <li><strong>Tu empresa primero.</strong> Cada instancia es privada y a medida. No se mezcla con otros clientes.</li>
+          <li><strong>Tú mandas.</strong> El departamento propone, ejecuta lo que puede, escala lo importante. Tú apruebas lo que cuenta.</li>
+          <li><strong>Hecho en España, hecho para hablar como tú.</strong> Sin traducción de Google. Sin anglicismos forzados. Sin acentos de fuera.</li>
+          <li><strong>Transparencia radical.</strong> Lo que hace el departamento, por qué, cuándo y cómo. Todo registrado, todo visible.</li>
+          <li><strong>Sin permanencia.</strong> Si no aporta, te vas. Tus datos se eliminan a los 30 días.</li>
+        </ul>
+      </div>
+      <div>
+        <h2>Posicionamiento</h2>
+        <p>DEPARTIFY no es una herramienta, no es un chatbot, no es una agencia low-cost. Es <strong>el sistema operativo de tu empresa</strong>. La categoría es nueva: Business Operating System para pymes.</p>
+        <h2>Audiencia</h2>
+        <ul>
+          <li>Fundadores y CEOs de pymes en España y Europa.</li>
+          <li>Empresas de 1 a 50 personas con necesidad real de marketing, SEO, contenido, datos.</li>
+          <li>Personas que ya están saturadas y saben que delegar es la única salida.</li>
+        </ul>
+        <h2>Promesa</h2>
+        <p class="card" style="background: #0A0C08; color: #FAFAFA; border: 0; padding: 6mm;">
+          <span style="color: #D8FF62; font-weight: 700; font-size: 13pt; display: block; margin-bottom: 2mm;">Te devolvemos tiempo.</span>
+          <span style="color: #C8C8C8; font-size: 10pt;">Una promesa literal: el trabajo se hace, tú no lo haces. Y los minutos que recuperas son tuyos.</span>
+        </p>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 8mm;">Personalidad de marca</h2>
+    <div class="grid grid-3" style="margin-top: 4mm;">
+      <div class="card"><div class="label">Sí</div><p style="margin: 1mm 0 0 0; font-weight: 600;">Directo y claro</p><p style="margin: 1mm 0 0 0; font-size: 9.5pt; color: #555;">Sin rodeos, sin marketing del vacío. Decimos lo que el producto hace.</p></div>
+      <div class="card"><div class="label">Sí</div><p style="margin: 1mm 0 0 0; font-weight: 600;">Premium pero accesible</p><p style="margin: 1mm 0 0 0; font-size: 9.5pt; color: #555;">Estética cuidada, lenguaje de calle. Ni cursi ni pretencioso.</p></div>
+      <div class="card"><div class="label">Sí</div><p style="margin: 1mm 0 0 0; font-weight: 600;">Cercano y humano</p><p style="margin: 1mm 0 0 0; font-size: 9.5pt; color: #555;">Tú, no "el usuario". Tu empresa, no "el cliente". Hecho en España, no "European-made".</p></div>
+      <div class="card"><div class="label">No</div><p style="margin: 1mm 0 0 0; font-weight: 600;">Hype de IA</p><p style="margin: 1mm 0 0 0; font-size: 9.5pt; color: #555;">Nada de "revolucionario", "disruptivo", "el futuro es ahora". Ya no se lo cree nadie.</p></div>
+      <div class="card"><div class="label">No</div><p style="margin: 1mm 0 0 0; font-weight: 600;">Jerga técnica vacía</p><p style="margin: 1mm 0 0 0; font-size: 9.5pt; color: #555;">Nada de "stack", "leverage", "sinergias". Lo que el producto hace, en español normal.</p></div>
+      <div class="card"><div class="label">No</div><p style="margin: 1mm 0 0 0; font-weight: 600;">Anglicismos forzados</p><p style="margin: 1mm 0 0 0; font-size: 9.5pt; color: #555;">"Onboarding" → "activación". "Workflow" → "flujo de trabajo". Salvo marcas.</p></div>
+    </div>
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>02 · Identidad</span></div>
+  </div>
+</section>
+
+<!-- ============== 2. LOGOTIPO ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">02 · </span>Logotipo</div>
+    <h1>La <span class="accent">D</span> de DEPARTIFY.</h1>
+    <p class="lead">El símbolo es una "D" mayúscula con un corte diagonal que divide dos superficies: una lima eléctrica arriba a la izquierda, un verde bosque abajo a la derecha. La diagonal es la acción, la marca es la calma.</p>
+  </div>
+  <div class="body">
+    <h2>Variantes</h2>
+    <p>El logo se usa en tres variantes oficiales. Elegir según el soporte y el fondo:</p>
+    <div class="grid grid-3" style="margin-top: 4mm;">
+      <div class="card"><div class="label">Primaria</div><div style="display:flex; justify-content:center; align-items:center; height: 24mm; padding: 2mm 0;"><img class="logo-d" style="height: 20mm; width: auto;" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div><p style="font-size: 9pt; margin: 0;">Sobre fondo oscuro o neutro. La versión canónica.</p></div>
+      <div class="card"><div class="label">Sobre fondo claro</div><div style="display:flex; justify-content:center; align-items:center; height: 24mm; padding: 2mm 0;"><img class="logo-d" style="height: 20mm; width: auto;" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div><p style="font-size: 9pt; margin: 0;">Sobre blancos y cremas. Conserva el gradiente.</p></div>
+      <div class="card"><div class="label">Monocroma</div><div style="display:flex; justify-content:center; align-items:center; height: 24mm; padding: 2mm 0;"><img class="logo-d" style="height: 20mm; width: auto;" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div><p style="font-size: 9pt; margin: 0;">Solo cuando la impresión o el medio lo exige (1 tinta, grabado, bordado).</p></div>
+    </div>
+
+    <h2 style="margin-top: 8mm;">Construcción y espacio de respeto</h2>
+    <p>El espacio de respeto mínimo alrededor del logo equivale a la altura del trazo diagonal de la "D". Ningún elemento —texto, imagen, borde de página— puede entrar en esa zona.</p>
+
+    <h2 style="margin-top: 8mm;">Tamaño mínimo</h2>
+    <div class="grid grid-2">
+      <div class="card"><div class="label">Digital</div><p style="margin: 2mm 0 0 0; font-size: 14pt; font-weight: 700;">24 px</p><p style="font-size: 9pt; color: #555; margin: 0;">Por debajo de 24 px usar solo el símbolo, nunca con wordmark.</p></div>
+      <div class="card"><div class="label">Impresión</div><p style="margin: 2mm 0 0 0; font-size: 14pt; font-weight: 700;">8 mm</p><p style="font-size: 9pt; color: #555; margin: 0;">Tamaño mínimo del símbolo en cualquier soporte impreso.</p></div>
+    </div>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>03 · Logotipo</span></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="body" style="padding-top: 18mm;">
+    <h2>Usos correctos</h2>
+    <div class="logogrid">
+      <div class="cell dark"><span class="badge ok">Sí</span><img class="logo-d" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div>
+      <div class="cell light"><span class="badge ok" style="color: #fff; background: var(--success);">Sí</span><img class="logo-d" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div>
+      <div class="cell lime"><span class="badge ok">Sí</span><img class="logo-d" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div>
+      <div class="cell gray"><span class="badge ok">Sí</span><img class="logo-d" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div>
+    </div>
+
+    <h2 style="margin-top: 8mm;">Usos incorrectos</h2>
+    <div class="logogrid">
+      <div class="cell dark distort"><span class="badge no">No</span></div>
+      <div class="cell dark rotate45"><span class="badge no">No</span></div>
+      <div class="cell shadow"><span class="badge no">No</span><img class="logo-d" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div>
+      <div class="cell light" style="filter: contrast(0.5) brightness(1.4);"><span class="badge no">No</span><img class="logo-d" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D"></div>
+    </div>
+    <p style="margin-top: 4mm; font-size: 9pt; color: #555;">Nunca deformar, nunca rotar más de 5°, nunca añadir sombras o efectos, nunca aplicar filtros de color, nunca cambiar los colores del gradiente, nunca separar los dos planos de la diagonal.</p>
+
+    <h2 style="margin-top: 8mm;">Posición del wordmark</h2>
+    <p>El símbolo va siempre solo en tamaños pequeños (favicons, app icons, avatares). En cabeceras y firmas, el símbolo se sitúa a la izquierda del wordmark "DEPARTIFY" en mayúsculas, con tracking abierto (0.16em) y un peso semibold. Nunca se centra el símbolo sobre el wordmark ni se coloca encima.</p>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>04 · Logotipo</span></div>
+  </div>
+</section>
+
+<!-- ============== 3. COLOR ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">03 · </span>Color</div>
+    <h1>Negro profundo,<br><span class="accent">lima eléctrico</span>, verde bosque.</h1>
+    <p class="lead">Tres colores hacen el 95% de la marca. El resto son grises neutros para fondos, separadores y textos secundarios. La lima es la única protagonista del acento: aparece siempre con moderación y siempre con intención.</p>
+  </div>
+  <div class="body">
+    <h2>Paleta primaria</h2>
+    <div class="grid grid-3" style="margin-top: 3mm;">
+      <div class="swatch" style="background: #D8FF62; color: #0A0C08;"><div class="role" style="color: #0A0C08;">Acento</div><div class="name" style="color: #0A0C08;">Accent Lime</div><div class="hex" style="color: #0A0C08;">#D8FF62</div></div>
+      <div class="swatch" style="background: #0A0C08;"><div class="role">Fondo</div><div class="name">Background Ink</div><div class="hex">#0A0C08</div></div>
+      <div class="swatch" style="background: #0E3D1A;"><div class="role">Logo · oscuro</div><div class="name">Forest</div><div class="hex">#0E3D1A</div></div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Paleta secundaria</h2>
+    <div class="grid grid-4" style="margin-top: 3mm;">
+      <div class="swatch" style="background: #E3FF7A; color: #0A0C08;"><div class="role" style="color: #0A0C08;">Hover</div><div class="name" style="color: #0A0C08;">Lime Hover</div><div class="hex" style="color: #0A0C08;">#E3FF7A</div></div>
+      <div class="swatch" style="background: #CBFF4E; color: #0A0C08;"><div class="role" style="color: #0A0C08;">Active</div><div class="name" style="color: #0A0C08;">Lime Pressed</div><div class="hex" style="color: #0A0C08;">#CBFF4E</div></div>
+      <div class="swatch" style="background: #0F110F;"><div class="role">Surface</div><div class="name">Surface 0</div><div class="hex">#0F110F</div></div>
+      <div class="swatch" style="background: #14171F;"><div class="role">Surface</div><div class="name">Surface 1</div><div class="hex">#14171F</div></div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Neutros</h2>
+    <div class="grid grid-4" style="margin-top: 3mm;">
+      <div class="swatch" style="background: #FAFAFA; color: #0A0C08;"><div class="role" style="color: #0A0C08;">Texto</div><div class="name" style="color: #0A0C08;">FG 100</div><div class="hex" style="color: #0A0C08;">#FAFAFA</div></div>
+      <div class="swatch" style="background: #E5E5E5; color: #0A0C08;"><div class="role" style="color: #0A0C08;">Texto</div><div class="name" style="color: #0A0C08;">FG 80</div><div class="hex" style="color: #0A0C08;">#E5E5E5</div></div>
+      <div class="swatch" style="background: #8A8A8A; color: #fff;"><div class="role">Muted</div><div class="name">FG 50</div><div class="hex">#8A8A8A</div></div>
+      <div class="swatch" style="background: #6B6B6B; color: #fff;"><div class="role">Muted</div><div class="name">FG 40</div><div class="hex">#6B6B6B</div></div>
+    </div>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>05 · Color</span></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="body" style="padding-top: 18mm;">
+    <h2>Tabla de códigos</h2>
+    <table class="codes">
+      <thead>
+        <tr>
+          <th>Color</th>
+          <th>HEX</th>
+          <th>RGB</th>
+          <th>CMYK</th>
+          <th>Pantone</th>
+          <th>Uso</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><span class="chip" style="background:#D8FF62;"></span><span class="mono">Accent Lime</span></td><td class="mono">#D8FF62</td><td class="mono">216 · 255 · 98</td><td class="mono">15 · 0 · 62 · 0</td><td class="mono">389 C</td><td>Acento principal · CTAs · highlight</td></tr>
+        <tr><td><span class="chip" style="background:#E3FF7A;"></span><span class="mono">Lime Hover</span></td><td class="mono">#E3FF7A</td><td class="mono">227 · 255 · 122</td><td class="mono">11 · 0 · 52 · 0</td><td class="mono">388 C</td><td>Estado hover</td></tr>
+        <tr><td><span class="chip" style="background:#CBFF4E;"></span><span class="mono">Lime Pressed</span></td><td class="mono">#CBFF4E</td><td class="mono">203 · 255 · 78</td><td class="mono">20 · 0 · 69 · 0</td><td class="mono">387 C</td><td>Estado active / pressed</td></tr>
+        <tr><td><span class="chip" style="background:#0A0C08;"></span><span class="mono">Background Ink</span></td><td class="mono">#0A0C08</td><td class="mono">10 · 12 · 8</td><td class="mono">76 · 65 · 80 · 84</td><td class="mono">Black 6 C</td><td>Fondo principal · texto inverso</td></tr>
+        <tr><td><span class="chip" style="background:#0E3D1A;"></span><span class="mono">Forest</span></td><td class="mono">#0E3D1A</td><td class="mono">14 · 61 · 26</td><td class="mono">85 · 38 · 100 · 65</td><td class="mono">357 C</td><td>Plano oscuro del logo</td></tr>
+        <tr><td><span class="chip" style="background:#FAFAFA;"></span><span class="mono">FG 100</span></td><td class="mono">#FAFAFA</td><td class="mono">250 · 250 · 250</td><td class="mono">0 · 0 · 0 · 0</td><td class="mono">—</td><td>Texto principal sobre fondo oscuro</td></tr>
+        <tr><td><span class="chip" style="background:#8A8A8A;"></span><span class="mono">FG 50</span></td><td class="mono">#8A8A8A</td><td class="mono">138 · 138 · 138</td><td class="mono">0 · 0 · 0 · 50</td><td class="mono">—</td><td>Texto muted · metadata</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top: 6mm;">Combinaciones</h2>
+    <div class="doDont">
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Lima sobre negro. Alto contraste, máxima lectura, impacto en pantalla.</p></div>
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Negro sobre blanco. Para documentos, contratos, propuestas formales.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Texto lima sobre lima. Pierde contraste, queda como marca de agua sucia.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Más de dos acentos lima compitiendo en una misma composición.</p></div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Regla de uso del acento</h2>
+    <p>El lima eléctrico debe ocupar <strong>menos del 15% de la composición</strong> en cualquier pieza. Es un acento, no un fondo. Si una composición se siente "amarilla" entera, hay demasiada lima. Si no se ve la lima, falta vida. El punto dulce está en: <em>un área clara, una palabra destacada, un solo componente con acento</em>.</p>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>06 · Color</span></div>
+  </div>
+</section>
+
+<!-- ============== 4. TIPOGRAFÍA ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">04 · </span>Tipografía</div>
+    <h1>Una sola fuente<br><span class="accent">hace todo el trabajo.</span></h1>
+    <p class="lead">Inter es la familia principal. Funciona en display, cuerpo y microtexto. Para metadata técnica y eyebrows, una mono. La marca nunca mezcla más de dos familias en una pieza.</p>
+  </div>
+  <div class="body">
+    <h2>Familia principal · Inter</h2>
+    <p>Sans-serif geométrica, diseñada para pantalla. Tracking cerrado en display, abierto en microcopy. Usar pesos entre 400 y 800.</p>
+
+    <div class="specimen"><div class="meta"><strong>Display 64 · 800</strong>Heading principal</div><div class="display h1">Te devolvemos tiempo.</div></div>
+    <div class="specimen"><div class="meta"><strong>Display 36 · 700</strong>Sección</div><div class="display h2">Departamentos que conocen tu empresa.</div></div>
+    <div class="specimen"><div class="meta"><strong>Subtítulo 16 · 600</strong>Bloque destacado</div><div class="display h3">El departamento empieza a trabajar.</div></div>
+    <div class="specimen"><div class="meta"><strong>Body 11 · 400</strong>Párrafo</div><div class="display body">Marketing, SEO y más departamentos especializados que ejecutan trabajo, monitorizan tu negocio y te mantienen informado de lo que importa. Tú defines qué necesita conseguir tu empresa. Sin tecnicismos. Sin formulario interminable.</div></div>
+    <div class="specimen"><div class="meta"><strong>Mono 8.5 · 500</strong>Eyebrow · metadata</div><div class="display mono">TU EMPRESA. MÁS EQUIPO. · 24 / 7 · DEPARTAMENTO ACTIVO</div></div>
+
+    <h2 style="margin-top: 6mm;">Familia monoespaciada · JetBrains Mono</h2>
+    <p>Para eyebrows, metadata, tags de estado, números de referencia, IDs, timestamps. Todo lo que "parece código". Tracking siempre abierto (0.16em) y mayúsculas.</p>
+
+    <h2 style="margin-top: 6mm;">Jerarquía en una página</h2>
+    <table class="codes">
+      <thead><tr><th>Nivel</th><th>Tamaño</th><th>Peso</th><th>Tracking</th><th>Color</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">H1 · Cover</td><td class="mono">64 pt</td><td class="mono">800</td><td class="mono">-0.04em</td><td>FG 100</td></tr>
+        <tr><td class="mono">H1 · Sección</td><td class="mono">36 pt</td><td class="mono">800</td><td class="mono">-0.025em</td><td>FG 100 / Accent</td></tr>
+        <tr><td class="mono">H2</td><td class="mono">22 pt</td><td class="mono">700</td><td class="mono">-0.015em</td><td>FG 100</td></tr>
+        <tr><td class="mono">H3</td><td class="mono">16 pt</td><td class="mono">600</td><td class="mono">normal</td><td>FG 100</td></tr>
+        <tr><td class="mono">Body</td><td class="mono">11 pt</td><td class="mono">400</td><td class="mono">normal</td><td>FG 80 / 90</td></tr>
+        <tr><td class="mono">Caption / Eyebrow</td><td class="mono">8.5 pt</td><td class="mono">500</td><td class="mono">0.18em</td><td>FG 50 / Muted</td></tr>
+      </tbody>
+    </table>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>07 · Tipografía</span></div>
+  </div>
+</section>
+
+<!-- ============== 5. TONO DE VOZ ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">05 · </span>Tono de voz</div>
+    <h1>Cómo suena DEPARTIFY<br><span class="accent">cuando habla.</span></h1>
+    <p class="lead">Castellano de España, registro directo, sin marketing del vacío. La marca habla como un buen comercial senior explicándole a un CEO curioso lo que ha construido. No como un coach de LinkedIn, no como un comercial de low-cost.</p>
+  </div>
+  <div class="body">
+    <div class="grid grid-2">
+      <div>
+        <h2>Principios</h2>
+        <ol>
+          <li><strong>Decir lo que hace, no lo que cambia el mundo.</strong> "Ejecuta SEO" mejor que "revoluciona tu posicionamiento".</li>
+          <li><strong>Tú, no "el usuario".</strong> Tu empresa, tu tiempo, tu decisión. Nunca "el cliente" genérico.</li>
+          <li><strong>Hecho en España, en español.</strong> Sin anglicismos forzados. Marcas y nombres propios en su idioma original.</li>
+          <li><strong>Una idea por frase.</strong> Párrafos cortos. Oraciones cortas. Aire entre bloques.</li>
+          <li><strong>Mostrar antes que explicar.</strong> Un ejemplo vale más que tres adjetivos.</li>
+        </ol>
+      </div>
+      <div>
+        <h2>Glosario de marca</h2>
+        <table class="codes">
+          <thead><tr><th>Decimos</th><th>No decimos</th></tr></thead>
+          <tbody>
+            <tr><td>Departamento</td><td>Agente, bot, IA, asistente</td></tr>
+            <tr><td>Activación</td><td>Onboarding</td></tr>
+            <tr><td>Aprobación</td><td>Approval, validación</td></tr>
+            <tr><td>Instancia privada</td><td>Workspace, entorno</td></tr>
+            <tr><td>Tu empresa</td><td>El cliente, la cuenta</td></tr>
+            <tr><td>Trabajo hecho</td><td>Output, deliverable</td></tr>
+            <tr><td>Aprueba</td><td>Dale OK, valida</td></tr>
+            <tr><td>Marca</td><td>Branding</td></tr>
+            <tr><td>Te devolvemos tiempo</td><td>Maximiza tu productividad</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 8mm;">Microcopy de producto</h2>
+    <div class="grid grid-2" style="margin-top: 3mm;">
+      <div class="card">
+        <div class="label">Botón principal</div>
+        <p style="font-size: 13pt; font-weight: 600; margin: 1mm 0 0 0; color: #0A0C08;">Empieza con Departify</p>
+        <p style="font-size: 9pt; color: #555; margin: 1mm 0 0 0;">No "Empezar", no "Contratar", no "Suscribirme".</p>
+      </div>
+      <div class="card">
+        <div class="label">Estado · trabajo terminado</div>
+        <p style="font-size: 13pt; font-weight: 600; margin: 1mm 0 0 0; color: #0A0C08;">Terminado</p>
+        <p style="font-size: 9pt; color: #555; margin: 1mm 0 0 0;">En pasado, en claro. No "Success", no "Done".</p>
+      </div>
+      <div class="card">
+        <div class="label">Eyebrow de sección</div>
+        <p style="font-size: 11pt; font-weight: 600; margin: 1mm 0 0 0; color: #0A0C08; font-family: var(--font-mono); letter-spacing: 0.18em; text-transform: uppercase;">Cómo trabajan</p>
+        <p style="font-size: 9pt; color: #555; margin: 1mm 0 0 0;">En mono, en mayúsculas, en una sola línea.</p>
+      </div>
+      <div class="card">
+        <div class="label">Mensaje de error</div>
+        <p style="font-size: 11pt; font-weight: 500; margin: 1mm 0 0 0; color: #0A0C08;">No hemos podido conectar con tu CRM. Vuelve a intentarlo en un minuto.</p>
+        <p style="font-size: 9pt; color: #555; margin: 1mm 0 0 0;">Tono tranquilo, sin alarmar, con siguiente paso.</p>
+      </div>
+    </div>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>08 · Tono de voz</span></div>
+  </div>
+</section>
+
+<!-- ============== 6. ESTILO VISUAL ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">06 · </span>Estilo visual</div>
+    <h1>Imágenes, iconos,<br><span class="accent">texturas.</span></h1>
+    <p class="lead">El estilo visual de DEPARTIFY es oscuro, limpio, con acento lima. Las fotos son oscuras y reales. Los iconos son finos. Los patrones son sutiles. Nada compite con el logo por la atención.</p>
+  </div>
+  <div class="body">
+    <h2>Fotografía</h2>
+    <div class="doDont">
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Fotos oscuras, con luz natural lateral. Personas reales, no modelos. Oficinas reales, platós de coworking reales. Ligero color grading frío con realce sutil en verdes.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Fotos con flash, sonrientes mirando a cámara, oficinas genéricas de stock. Filtros de Instagram. Saturación alta. Planos abiertos sin sujeto.</p></div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Ilustración e iconografía</h2>
+    <p>Estilo: trazo fino (1.5px), esquinas redondeadas, monoline. Los iconos se entregan en una sola tinta (blanco o negro) o en lima cuando son CTA. La biblioteca de iconos es <strong>lucide.dev</strong>, con peso "stroke" 1.5.</p>
+    <div class="grid grid-4" style="margin-top: 4mm;">
+      <div class="card" style="text-align: center;"><div style="height: 16mm; display: flex; align-items: center; justify-content: center; color: #0A0C08;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="m2 17 10 5 10-5"/><path d="m2 12 10 5 10-5"/></svg></div><p style="font-size: 8pt; margin: 1mm 0 0 0; color: #555;">Stack / capa</p></div>
+      <div class="card" style="text-align: center;"><div style="height: 16mm; display: flex; align-items: center; justify-content: center; color: #0A0C08;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></div><p style="font-size: 8pt; margin: 1mm 0 0 0; color: #555;">Tiempo 24/7</p></div>
+      <div class="card" style="text-align: center;"><div style="height: 16mm; display: flex; align-items: center; justify-content: center; color: #0A0C08;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/></svg></div><p style="font-size: 8pt; margin: 1mm 0 0 0; color: #555;">Seguridad</p></div>
+      <div class="card" style="text-align: center;"><div style="height: 16mm; display: flex; align-items: center; justify-content: center; color: #0A0C08;"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div><p style="font-size: 8pt; margin: 1mm 0 0 0; color: #555;">Conversación</p></div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Patrones y texturas</h2>
+    <p>Un único patrón oficial: una cuadrícula fina (1px cada 32px) con opacidad 0.04 sobre los fondos oscuros. Se usa para dar textura sin ruido. Se aplica con un <em>radial fade</em> en los bordes. Nunca superpuesto al logo, nunca compitiendo con texto.</p>
+
+    <h2 style="margin-top: 6mm;">Composición</h2>
+    <ul>
+      <li>Generoso espacio en blanco. La marca respira.</li>
+      <li>Una sola fuente de luz en cualquier composición.</li>
+      <li>La diagonal del logo se respeta en la composición general cuando es posible (45°).</li>
+      <li>Las cards y elementos UI tienen border-radius 12px en digital, esquinas rectas en impresión.</li>
+    </ul>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>09 · Estilo visual</span></div>
+  </div>
+</section>
+
+<!-- ============== 7. REDES SOCIALES ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">07 · </span>Redes sociales</div>
+    <h1>DEPARTIFY en<br><span class="accent">cada red.</span></h1>
+    <p class="lead">La marca se adapta a cada plataforma sin perder identidad. Mismas reglas, distinto formato. Aquí están los tamaños oficiales, las plantillas y las convenciones de hashtag, tono y cadencia.</p>
+  </div>
+  <div class="body">
+    <h2>Identidad por canal</h2>
+    <div class="grid grid-2" style="margin-top: 3mm;">
+      <div class="card">
+        <div class="label">Cuenta principal</div>
+        <p style="font-size: 11pt; font-weight: 600; margin: 1mm 0;">@departify</p>
+        <p style="font-size: 9pt; color: #555; margin: 0;">Misma cuenta en todas las plataformas. Sin underscore, sin números.</p>
+      </div>
+      <div class="card">
+        <div class="label">Hashtag corporativo</div>
+        <p style="font-size: 11pt; font-weight: 600; margin: 1mm 0; font-family: var(--font-mono);">#Departify</p>
+        <p style="font-size: 9pt; color: #555; margin: 0;">Una sola hashtag principal. Las campañas usan hashtag secundario.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Especificaciones por plataforma</h2>
+
+    <h3 style="margin-top: 5mm;">LinkedIn · compañía + personal</h3>
+    <div class="grid grid-2">
+      <div class="smspec">
+        <div class="platform">Foto de perfil · compañía</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">300 × 300 px</span></div>
+        <div class="row"><span class="k">Contenido</span><span class="v">Solo el símbolo "D"</span></div>
+        <div class="row"><span class="k">Fondo</span><span class="v">#0A0C08</span></div>
+        <div class="row"><span class="k">Símbolo</span><span class="v">centrado, 60% del frame</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Portada · compañía</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1584 × 396 px</span></div>
+        <div class="row"><span class="k">Contenido</span><span class="v">Tagline + wordmark</span></div>
+        <div class="row"><span class="k">Safe area</span><span class="v">margin 80 px lateral</span></div>
+        <div class="row"><span class="k">Fondo</span><span class="v">#0A0C08 + radial lime</span></div>
+      </div>
+    </div>
+    <div class="grid grid-2" style="margin-top: 4mm;">
+      <div class="smspec">
+        <div class="platform">Post imagen cuadrada</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1200 × 1200 px</span></div>
+        <div class="row"><span class="k">Ratio</span><span class="v">1:1</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Post imagen horizontal</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1200 × 627 px</span></div>
+        <div class="row"><span class="k">Ratio</span><span class="v">1.91:1</span></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 5mm;">X (Twitter)</h3>
+    <div class="grid grid-2">
+      <div class="smspec">
+        <div class="platform">Foto de perfil</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">400 × 400 px</span></div>
+        <div class="row"><span class="k">Contenido</span><span class="v">Símbolo "D" solo</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Header / cover</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1500 × 500 px</span></div>
+        <div class="row"><span class="k">Safe area</span><span class="v">centro 1500 × 380</span></div>
+      </div>
+    </div>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>10 · Redes sociales</span></div>
+  </div>
+</section>
+
+<section class="page">
+  <div class="body" style="padding-top: 18mm;">
+    <h3>Instagram</h3>
+    <div class="grid grid-3">
+      <div class="smspec">
+        <div class="platform">Foto de perfil</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">320 × 320 px</span></div>
+        <div class="row"><span class="k">Contenido</span><span class="v">Símbolo "D" solo</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Post cuadrado</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1080 × 1080 px</span></div>
+        <div class="row"><span class="k">Ratio</span><span class="v">1:1</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Post vertical</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1080 × 1350 px</span></div>
+        <div class="row"><span class="k">Ratio</span><span class="v">4:5</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Story / Reel</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1080 × 1920 px</span></div>
+        <div class="row"><span class="k">Ratio</span><span class="v">9:16</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Carrusel</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1080 × 1080 px</span></div>
+        <div class="row"><span class="k">Slides</span><span class="v">max 10</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Reel cover</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1080 × 1920 px</span></div>
+        <div class="row"><span class="k">Safe area</span><span class="v">centro 1080 × 1420</span></div>
+      </div>
+    </div>
+
+    <h3 style="margin-top: 5mm;">YouTube</h3>
+    <div class="grid grid-2">
+      <div class="smspec">
+        <div class="platform">Channel art (banner)</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">2560 × 1440 px</span></div>
+        <div class="row"><span class="k">Safe TV</span><span class="v">1546 × 423 px centro</span></div>
+        <div class="row"><span class="k">Safe desktop</span><span class="v">2560 × 423 px centro</span></div>
+        <div class="row"><span class="k">Safe mobile</span><span class="v">1546 × 423 px centro</span></div>
+      </div>
+      <div class="smspec">
+        <div class="platform">Thumbnail</div>
+        <div class="row"><span class="k">Tamaño</span><span class="v">1280 × 720 px</span></div>
+        <div class="row"><span class="k">Ratio</span><span class="v">16:9</span></div>
+        <div class="row"><span class="k">Peso máx</span><span class="v">2 MB</span></div>
+        <div class="row"><span class="k">Formato</span><span class="v">JPG, PNG</span></div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Plantillas de post</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="label">Tipo 01 · Anuncio de producto</div>
+        <p style="margin: 2mm 0;"><strong>Headline 1 línea</strong> (display 36)</p>
+        <p style="margin: 2mm 0; font-size: 9.5pt;">Subtítulo 2 líneas (body)</p>
+        <p style="margin: 2mm 0; font-size: 9.5pt;">Logo pequeño · CTA · URL</p>
+        <p style="margin: 2mm 0; font-size: 8pt; color: #555;">Fondo negro + radial lime suave</p>
+      </div>
+      <div class="card">
+        <div class="label">Tipo 02 · Dato / cifra</div>
+        <p style="margin: 2mm 0; font-size: 24pt; font-weight: 800; color: #0A0C08;">47</p>
+        <p style="margin: 2mm 0; font-size: 11pt; font-weight: 600;">tareas completadas</p>
+        <p style="margin: 2mm 0; font-size: 9.5pt;">en una semana</p>
+        <p style="margin: 2mm 0; font-size: 8pt; color: #555;">Una sola cifra. Lima en el número.</p>
+      </div>
+      <div class="card">
+        <div class="label">Tipo 03 · Cita</div>
+        <p style="margin: 2mm 0; font-size: 13pt; font-weight: 600; line-height: 1.35;">"Tú marcas los objetivos. El departamento trabaja."</p>
+        <p style="margin: 2mm 0; font-size: 9.5pt;">— DEPARTIFY</p>
+        <p style="margin: 2mm 0; font-size: 8pt; color: #555;">Tipografía grande, fondo plano.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Hashtags oficiales</h2>
+    <p style="font-family: var(--font-mono); font-size: 9.5pt; color: #0A0C08;">#Departify · #DepartamentosConIA · #TeDevolvemosTiempo · #HechoEnEspaña · #Negocio24_7 · #TúApruebas</p>
+
+    <h2 style="margin-top: 6mm;">Cadencia recomendada</h2>
+    <table class="codes">
+      <thead><tr><th>Plataforma</th><th>Frecuencia</th><th>Tipo de contenido</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">LinkedIn compañía</td><td>3-4 posts/semana</td><td>Producto · casos · cultura</td></tr>
+        <tr><td class="mono">LinkedIn personal CEO</td><td>2-3 posts/semana</td><td>Visión · aprendizajes · producto</td></tr>
+        <tr><td class="mono">X (Twitter)</td><td>5-10 posts/semana</td><td>Curación · respuestas · corto</td></tr>
+        <tr><td class="mono">Instagram</td><td>2-3 posts/semana + 1 reel</td><td>Visual · citas · producto</td></tr>
+        <tr><td class="mono">YouTube</td><td>1-2 vídeos/mes</td><td>Producto · tutoriales · casos</td></tr>
+      </tbody>
+    </table>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>11 · Redes sociales</span></div>
+  </div>
+</section>
+
+<!-- ============== 8. FIRMA DE EMAIL ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">08 · </span>Firma de email</div>
+    <h1>La firma es <span class="accent">tu tarjeta</span><br>de visita.</h1>
+    <p class="lead">Cada email que sale de DEPARTIFY lleva la misma firma, con la misma estructura. Es el activo de marca más repetido de la empresa. Cuídalo.</p>
+  </div>
+  <div class="body">
+    <h2>Componentes obligatorios</h2>
+    <ul>
+      <li><strong>Nombre completo</strong> · 12pt, semibold, color FG 100.</li>
+      <li><strong>Cargo</strong> · 9pt, regular, color FG 80.</li>
+      <li><strong>Empresa</strong> · "DEPARTIFY" en mayúsculas, mono, tracking 0.16em, 8pt.</li>
+      <li><strong>Email</strong> · link mailto, color Forest.</li>
+      <li><strong>Teléfono</strong> · formato internacional +34 XXX XX XX XX.</li>
+      <li><strong>Web</strong> · departify.app, color Forest.</li>
+      <li><strong>Línea de acento</strong> · 2px de alto, 30mm de ancho, color Accent Lime. Es lo único de color en toda la firma.</li>
+    </ul>
+    <p>Componentes opcionales: linkedin.com/in/[slug], x.com/[handle]. Nunca más de dos redes sociales.</p>
+
+    <h2 style="margin-top: 6mm;">Plantilla HTML</h2>
+    <p>Esta es la firma oficial. Copia y pega en el editor HTML de tu cliente de correo. Inline styles para máxima compatibilidad (Gmail, Outlook, Apple Mail).</p>
+    <pre style="font-family: var(--font-mono); font-size: 8pt; background: #F6F6F4; border: 1px solid #EAEAE6; border-radius: 2mm; padding: 4mm; white-space: pre-wrap; color: #0A0C08; line-height: 1.45;">&lt;table cellpadding="0" cellspacing="0" border="0" style="font-family: 'Inter', Arial, sans-serif; color: #0A0C08; font-size: 11pt;"&gt;
+  &lt;tr&gt;
+    &lt;td style="padding-right: 16px; border-right: 1px solid #E5E5E5;"&gt;
+      &lt;img src="https://departify.app/signature-d.png" alt="DEPARTIFY" width="56" height="56" style="display: block;"&gt;
+    &lt;/td&gt;
+    &lt;td style="padding-left: 16px; vertical-align: top;"&gt;
+      &lt;div style="font-size: 12pt; font-weight: 600; color: #0A0C08; line-height: 1.2;"&gt;Nombre Apellido&lt;/div&gt;
+      &lt;div style="font-size: 9pt; color: #5A5A5A; line-height: 1.3; margin-top: 2px;"&gt;Cargo · Área&lt;/div&gt;
+      &lt;div style="font-size: 8pt; font-weight: 600; color: #0A0C08; letter-spacing: 0.16em; margin-top: 6px;"&gt;DEPARTIFY&lt;/div&gt;
+      &lt;div style="font-size: 9pt; line-height: 1.5; margin-top: 6px;"&gt;
+        &lt;a href="mailto:nombre@departify.app" style="color: #0E3D1A; text-decoration: none;"&gt;nombre@departify.app&lt;/a&gt;&lt;br&gt;
+        &lt;a href="tel:+34XXXXXXXXX" style="color: #0E3D1A; text-decoration: none;"&gt;+34 XXX XX XX XX&lt;/a&gt;&lt;br&gt;
+        &lt;a href="https://departify.app" style="color: #0E3D1A; text-decoration: none;"&gt;departify.app&lt;/a&gt;
+      &lt;/div&gt;
+      &lt;div style="height: 2px; width: 30mm; background: #D8FF62; margin-top: 8px;"&gt;&lt;/div&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+
+    <h2 style="margin-top: 6mm;">Versión texto plano</h2>
+    <pre style="font-family: var(--font-mono); font-size: 9pt; background: #F6F6F4; border: 1px solid #EAEAE6; border-radius: 2mm; padding: 4mm; white-space: pre-wrap; color: #0A0C08; line-height: 1.45;">Nombre Apellido
+Cargo · Área
+DEPARTIFY
+nombre@departify.app  |  +34 XXX XX XX XX  |  departify.app</pre>
+
+    <h2 style="margin-top: 6mm;">Vista previa</h2>
+    <div class="sigcard">
+      <table style="width: 100%; border-collapse: collapse;">
+        <tr>
+          <td style="width: 18mm; padding-right: 4mm; border-right: 1px solid #E5E5E5; vertical-align: top;">
+            <img class="logo-d" style="width: 16mm; height: 16mm;" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D">
+          </td>
+          <td style="padding-left: 4mm; vertical-align: top;">
+            <div class="name">Lucía Sánchez</div>
+            <div class="role">Head of Marketing</div>
+            <div style="font-family: var(--font-mono); font-size: 8pt; font-weight: 600; letter-spacing: 0.16em; color: #0A0C08; margin-top: 2mm;">DEPARTIFY</div>
+            <div class="links" style="font-size: 9pt; margin-top: 2mm; line-height: 1.6;">
+              <a href="#">lucia@departify.app</a> &nbsp;·&nbsp; <a href="#">+34 612 34 56 78</a> &nbsp;·&nbsp; <a href="#">departify.app</a>
+            </div>
+            <div class="accent-line"></div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Buenas prácticas</h2>
+    <div class="doDont">
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Máximo 6 líneas visibles. Sin imágenes mayores de 60×60px. Sin GIFs. Sin citas célebres. Una sola línea de acento. Una sola red social.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Banners corporativos de 800px. Frases motivacionales. Múltiples logos. Colores que no sean los de marca. Confetti emoji.</p></div>
+    </div>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>12 · Firma de email</span></div>
+  </div>
+</section>
+
+<!-- ============== 9. WEB Y DIGITAL ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">09 · </span>Web y digital</div>
+    <h1>La web es <span class="accent">la marca</span><br>en su máxima expresión.</h1>
+    <p class="lead">La web, el panel y los emails transaccionales son los activos digitales principales. Aquí están las convenciones de favicon, Open Graph, UI y componentes.</p>
+  </div>
+  <div class="body">
+    <h2>Favicon y app icon</h2>
+    <div class="grid grid-3">
+      <div class="card">
+        <div class="label">Favicon .ico</div>
+        <p style="font-size: 14pt; font-weight: 700; margin: 1mm 0;">32 × 32 / 16 × 16</p>
+        <p style="font-size: 9pt; color: #555; margin: 0;">Símbolo "D" solo, fondo #0A0C08.</p>
+      </div>
+      <div class="card">
+        <div class="label">Apple touch icon</div>
+        <p style="font-size: 14pt; font-weight: 700; margin: 1mm 0;">180 × 180</p>
+        <p style="font-size: 9pt; color: #555; margin: 0;">Símbolo "D" centrado en safe area 20%.</p>
+      </div>
+      <div class="card">
+        <div class="label">Android / PWA</div>
+        <p style="font-size: 14pt; font-weight: 700; margin: 1mm 0;">192 · 512</p>
+        <p style="font-size: 9pt; color: #555; margin: 0;">Mismo símbolo, padding del 12%.</p>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Open Graph · previsualización social</h2>
+    <table class="codes">
+      <thead><tr><th>Plataforma</th><th>Tamaño</th><th>Ratio</th><th>Composición</th></tr></thead>
+      <tbody>
+        <tr><td class="mono">Open Graph (Facebook, LinkedIn)</td><td class="mono">1200 × 630 px</td><td class="mono">1.91:1</td><td>Fondo negro + símbolo + tagline</td></tr>
+        <tr><td class="mono">Twitter card (large image)</td><td class="mono">1200 × 675 px</td><td class="mono">16:9</td><td>Misma composición, ratio horizontal</td></tr>
+      </tbody>
+    </table>
+    <p style="font-size: 9.5pt; margin-top: 2mm; color: #555;">El OG image siempre lleva el símbolo a la izquierda, el tagline a la derecha, y el logo + URL en la esquina inferior.</p>
+
+    <h2 style="margin-top: 6mm;">Patrones de UI</h2>
+    <ul>
+      <li><strong>Border radius:</strong> 12px en cards, 8px en inputs y botones, 999px en tags.</li>
+      <li><strong>Sombras:</strong> sutiles, una sola fuente. <code>box-shadow: 0 1px 0 rgba(0,0,0,0.1)</code> en elevación 1; <code>0 8px 24px rgba(0,0,0,0.12)</code> en elevación 3.</li>
+      <li><strong>Inputs:</strong> fondo #0F110F, border 1px rgba(255,255,255,0.08), focus ring 2px Accent.</li>
+      <li><strong>Botón primario:</strong> fondo Accent Lime, texto #0A0C08, peso 500, padding 12px 16px, radius 8px.</li>
+      <li><strong>Botón secundario:</strong> fondo transparente, border 1px var(--border-strong), texto FG 100.</li>
+      <li><strong>Estados de carga:</strong> shimmer lime a 0.10 de opacidad, nunca spinners giratorios.</li>
+    </ul>
+
+    <h2 style="margin-top: 6mm;">Emails transaccionales</h2>
+    <p>Plantilla base: cabecera con logo en negativo, body con tipografía Inter, footer con línea de acento y datos de empresa. Mismo tratamiento de la firma, extendido a toda la plantilla.</p>
+    <ul>
+      <li>Asunto: max 60 caracteres, oración directa, sin emoji.</li>
+      <li>Pre-header: max 90 caracteres, completa el asunto, no lo repite.</li>
+      <li>CTA principal: una sola acción por email, botón Accent Lime.</li>
+    </ul>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>13 · Web y digital</span></div>
+  </div>
+</section>
+
+<!-- ============== 10. MATERIALES IMPRESOS ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">10 · </span>Materiales impresos</div>
+    <h1>Cuando la marca<br><span class="accent">se imprime.</span></h1>
+    <p class="lead">Las piezas impresas mantienen la estética digital. Mismos colores, misma tipografía, mismo espacio. Lo que cambia es el soporte: papeles, acabados y técnicas de impresión.</p>
+  </div>
+  <div class="body">
+    <h2>Tarjeta de visita</h2>
+    <div class="grid grid-2">
+      <div>
+        <p style="font-size: 11pt;"><strong>Tamaño:</strong> 85 × 55 mm</p>
+        <p style="font-size: 11pt;"><strong>Papel:</strong> Fedrigoni Sirio Black 700 g/m² o similar, negro mate.</p>
+        <p style="font-size: 11pt;"><strong>Impresión:</strong> serigrafía en una tinta Accent Lime (PMS 389 C) para el logo y la línea de acento.</p>
+        <p style="font-size: 11pt;"><strong>Tipografía:</strong> Inter grabada en blanco (letterpress inverso) o stamping foil plata.</p>
+        <p style="font-size: 11pt;"><strong>Acabado:</strong> bordes pintados en Accent Lime, 0.5mm. Esquinas rectas.</p>
+      </div>
+      <div style="background: #0A0C08; border-radius: 3mm; padding: 6mm; color: #FAFAFA; aspect-ratio: 1.7/1; display: flex; flex-direction: column; justify-content: space-between;">
+        <img class="logo-d" style="width: 14mm; height: 14mm;" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D">
+        <div>
+          <div style="font-size: 11pt; font-weight: 600;">Lucía Sánchez</div>
+          <div style="font-size: 8pt; color: #8A8A8A;">Head of Marketing</div>
+          <div style="height: 1px; width: 14mm; background: #D8FF62; margin-top: 3mm;"></div>
+          <div style="font-size: 8pt; margin-top: 2mm; line-height: 1.5;">
+            lucia@departify.app<br>
+            +34 612 34 56 78<br>
+            departify.app
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Papelería</h2>
+    <ul>
+      <li><strong>Hoja membretada:</strong> A4, logo pequeño arriba a la izquierda, datos de empresa abajo. Una línea de acento en el pie.</li>
+      <li><strong>Sobres:</strong> americano DL, negro o kraft, logo en stamping foil.</li>
+      <li><strong>Carpeta corporativa:</strong> A4, serigrafía lime, interior blanco con bolsillo de tarjeta.</li>
+    </ul>
+
+    <h2 style="margin-top: 6mm;">Presentaciones</h2>
+    <ul>
+      <li><strong>Plantilla:</strong> 16:9, fondo negro, una sola imagen por slide, headline en Inter 36, body en Inter 14.</li>
+      <li><strong>Estructura tipo:</strong> portada con logo, slide de contexto, slide de problema, slide de solución, slide de producto, métricas, cierre con CTA y URL.</li>
+      <li><strong>Datos y gráficos:</strong> barras y líneas en FG 100, valor destacado en Accent Lime. Ejes en FG 50.</li>
+      <li><strong>Plantilla editable:</strong> Google Slides, exportable a PDF y Keynote.</li>
+    </ul>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>14 · Materiales impresos</span></div>
+  </div>
+</section>
+
+<!-- ============== 11. DO'S & DON'TS ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">11 · </span>Do's &amp; Don'ts</div>
+    <h1>Lo que sí, <span class="accent">lo que no.</span></h1>
+    <p class="lead">Una lista corta y clara. Si dudas, mira aquí. Si tu pieza incumple alguna regla de "No", vuelve a la mesa de dibujo.</p>
+  </div>
+  <div class="body">
+    <h2>Logo</h2>
+    <div class="doDont">
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Usar el símbolo solo en espacios menores de 24px.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Estirar, comprimir, rotar o deformar el logo bajo ninguna circunstancia.</p></div>
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Mantener el espacio de respeto = altura del trazo diagonal.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Cambiar los colores del gradiente, añadir contornos o sombras.</p></div>
+    </div>
+
+    <h2 style="margin-top: 5mm;">Color</h2>
+    <div class="doDont">
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Usar Accent Lime en menos del 15% de la composición.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Aplicar Accent como color de fondo de una pantalla completa.</p></div>
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Combinar siempre Accent con negro o blanco para máximo contraste.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Introducir colores fuera de la paleta oficial sin aprobación de marca.</p></div>
+    </div>
+
+    <h2 style="margin-top: 5mm;">Tipografía</h2>
+    <div class="doDont">
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Inter en pesos 400-800. JetBrains Mono solo en metadata y eyebrows.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Mezclar más de dos familias tipográficas en una misma pieza.</p></div>
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Respetar la jerarquía: H1, H2, H3, body, caption en sus tamaños.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Itálica, condensed, stretched, outlined, drop shadow en tipografía.</p></div>
+    </div>
+
+    <h2 style="margin-top: 5mm;">Comunicación</h2>
+    <div class="doDont">
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Hablar en castellano de España, registro directo y claro.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Usar "revolucionario", "disruptivo", "el futuro es ahora", "AI-powered" sin contexto.</p></div>
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Llamar a las cosas por su nombre: departamento, activación, aprobación.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Traducir marcas: "Departify" no es "Departificar". "Marketing" no es "Mercadeo".</p></div>
+    </div>
+
+    <h2 style="margin-top: 5mm;">Redes sociales</h2>
+    <div class="doDont">
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Usar las plantillas oficiales. Respetar safe areas en cada formato.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Recortar el logo a la mitad para "encajar" en un avatar.</p></div>
+      <div class="cell yes"><div class="badge" style="background: var(--success); color: #fff;">Sí</div><p>Hashtags oficiales. Cadencia consistente. Tono coherente con el manual.</p></div>
+      <div class="cell not"><div class="badge" style="background: var(--danger); color: #fff;">No</div><p>Spam de hashtags, emojis decorativos, "lunes de motivación", "throwback thursday".</p></div>
+    </div>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>15 · Do's &amp; Don'ts</span></div>
+  </div>
+</section>
+
+<!-- ============== 12. RECURSOS Y CONTACTO ============== -->
+<section class="page">
+  <div class="section-header">
+    <div class="eyebrow"><span class="num">12 · </span>Recursos</div>
+    <h1>Dónde está <span class="accent">todo.</span></h1>
+    <p class="lead">Los assets de marca, las plantillas, los iconos y los logos están en un único lugar. Cualquier persona de la empresa o externa puede acceder a ellos sin pedir permiso.</p>
+  </div>
+  <div class="body">
+    <h2>Repositorio oficial de marca</h2>
+    <div class="card dark">
+      <p style="font-family: var(--font-mono); font-size: 11pt; color: #D8FF62; margin: 0;">https://departify.app/brand</p>
+      <p style="font-size: 9pt; color: #C8C8C8; margin: 2mm 0 0 0;">Acceso público con descarga directa de:</p>
+      <ul style="font-size: 9.5pt; color: #C8C8C8; margin-top: 2mm;">
+        <li>Logos en SVG, PNG (1x, 2x, 3x), PDF vectorial.</li>
+        <li>Paleta de colores en .ase (Adobe), .sketchpalette, CSS, JSON.</li>
+        <li>Tipografías Inter y JetBrains Mono en sus pesos oficiales.</li>
+        <li>Plantillas de Google Slides, Keynote y Figma.</li>
+        <li>Plantillas de post por plataforma (PSD y Figma).</li>
+        <li>Plantilla de firma de email en HTML.</li>
+        <li>Iconos Lucide en subconjunto "DEPARTIFY".</li>
+      </ul>
+    </div>
+
+    <h2 style="margin-top: 6mm;">Información legal</h2>
+    <table class="codes">
+      <tbody>
+        <tr><td class="mono">Razón social</td><td>Departify, S.L.</td></tr>
+        <tr><td class="mono">NIF</td><td>B-00000000 (sustituir en cada documento oficial)</td></tr>
+        <tr><td class="mono">Domicilio</td><td>España · Unión Europea</td></tr>
+        <tr><td class="mono">Email general</td><td>hola@departify.app</td></tr>
+        <tr><td class="mono">Email seguridad</td><td>seguridad@departify.app</td></tr>
+        <tr><td class="mono">Email privacidad</td><td>privacidad@departify.app</td></tr>
+        <tr><td class="mono">LinkedIn</td><td>linkedin.com/company/departify</td></tr>
+        <tr><td class="mono">X (Twitter)</td><td>x.com/departify</td></tr>
+        <tr><td class="mono">Web principal</td><td>departify.app</td></tr>
+        <tr><td class="mono">App</td><td>app.departify.app</td></tr>
+        <tr><td class="mono">Docs</td><td>docs.departify.app</td></tr>
+        <tr><td class="mono">API</td><td>api.departify.app</td></tr>
+      </tbody>
+    </table>
+
+    <h2 style="margin-top: 6mm;">Contacto de marca</h2>
+    <p>Para dudas sobre uso, excepciones a este manual, nuevos formatos o colaboraciones: <strong>marca@departify.app</strong>. La respuesta habitual es en menos de 24 h en horario laboral.</p>
+
+    <h2 style="margin-top: 6mm;">Versión del documento</h2>
+    <table class="codes">
+      <tbody>
+        <tr><td class="mono">Versión</td><td>1.0</td></tr>
+        <tr><td class="mono">Fecha</td><td>2026</td></tr>
+        <tr><td class="mono">Autor</td><td>Equipo de marca · DEPARTIFY</td></tr>
+        <tr><td class="mono">Próxima revisión</td><td>Q4 2026</td></tr>
+        <tr><td class="mono">Cambios</td><td>Versión inicial</td></tr>
+      </tbody>
+    </table>
+
+    <div style="margin-top: 10mm; padding: 6mm; background: #0A0C08; color: #FAFAFA; border-radius: 3mm; display: flex; align-items: center; justify-content: space-between;">
+      <div>
+        <p style="font-size: 14pt; font-weight: 700; color: #FAFAFA; margin: 0;">Te devolvemos tiempo.</p>
+        <p style="font-size: 9pt; color: #8A8A8A; margin: 2mm 0 0 0; font-family: var(--font-mono); text-transform: uppercase; letter-spacing: 0.18em;">Departify · Business Operating System · Made in Spain</p>
+      </div>
+      <img class="logo-d" style="width: 18mm; height: 18mm;" src="manual-assets/departify-d-symbol.png" alt="DEPARTIFY D">
+    </div>
+
+    <div class="docfoot"><span>Departify · Manual de Marca</span><span>16 · Recursos</span></div>
+  </div>
+</section>
+
+</body>
+</html>
